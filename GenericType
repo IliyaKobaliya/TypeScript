@@ -24,7 +24,7 @@ console.log(test1, test2)
 
 //////////////////////////////
 
-class Collection<T>{
+class Collection<T extends string | number | boolean>{
     constructor(private _items:T[] = []){}
     add(item: T) {
      this._items.push(item)
