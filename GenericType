@@ -24,7 +24,7 @@ console.log(test1, test2)
 
 //////////////////////////////
 
-class Colection<T>{
+class Collection<T>{
     constructor(private _items:T[] = []){}
     add(item: T) {
      this._items.push(item)
@@ -36,3 +36,10 @@ class Colection<T>{
      return this._items
  }
 }
+const strings =new Collection(["I","am","string"])
+
+strings.add("!");
+strings.remove("am")
+console.log(strings.items)
+
+
