@@ -1,0 +1,27 @@
+const getObjValue = <T extends object, R extends keyof T>(obj: T, key: R) => obj[key]
+
+const user = {
+    name: 'Iliya',
+    age: 22
+}
+
+console.log(getObjValue(user, name))
+console.log(getObjValue(user, asd))
+
+/////////////////////////////
+
+interface ILength {
+    length: number
+}
+const withLength = <T extends ILength>(value: T): { value: T, count: string } => ({ value, count: `It's ${value.length}` })
+
+//////////////////////////////
+
+const mergeObj = <T extends object, R extends object>(a: T, b: R) => Object.assign({}, a, b)
+const test1 = mergeObj({ name: `Iliya` }, { surname: `Kobaliya` });
+const test2 = mergeObj({ age: 22 }, { from: `Kramatorsk` })
+console.log(test1, test2)
+
+//////////////////////////////
+
+
